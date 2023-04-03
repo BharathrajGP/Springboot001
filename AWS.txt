@@ -1,0 +1,463 @@
+
+
+
+https://github.com/BharathrajGP/AWS001
+https://github.com/CodePhoenix08/AwsBeam4
+
+
+
+
+
+
+Amazon Elastic Compute Cloud (Amazon EC2)
+Amazon Elastic Compute Cloud (Amazon EC2) provides secure, resizable compute capacity
+in the cloud as Amazon EC2 instances.
+How Amazon EC2 works
+========================================================================
+(1) Launch
+First, you launch an instance. Begin by selecting a template with basic configurations for
+your instance. These configurations include the operating system, application server, or
+applications. You also select the instance type, which is the specific hardware configuration
+of your instance.
+As you are preparing to launch an instance, you specify security settings to control the
+network traffic that can flow into and out of your instance. Later in this course, we will
+explore Amazon EC2 security features in greater detail.
+========================================================================
+(2) Connect
+Next, connect to the instance. You can connect to the instance in several ways. Your
+programs and applications have multiple different methods to connect directly to the
+instance and exchange data. Users can also connect to the instance by logging in and
+accessing the computer desktop.
+============================================================================
+(3) Use
+After you have connected to the instance, you can begin using it. You can run commands to
+install software, add storage, copy and organize files, and more.
+===========================================================
+Multi-tenancy
+EC2 runs on top of physical host machines managed by AWS using virtualization
+technology. When you spin up an EC2 instance, you aren't necessarily taking an entire host
+to yourself. Instead, you are sharing the host with multiple other instances, otherwise
+known as virtual machines. And a hypervisor running on the host machine is responsible for
+sharing the underlying physical resources between the virtual machines
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+General purpose instances provide a balance of compute, memory, and networking
+resources. You can use them for a variety of workloads, such as:
+ application servers
+ gaming servers
+ backend servers for enterprise applications
+ small and medium databases
+====================================================================
+Compute optimized instances are ideal for compute-bound applications that benefit from
+high-performance processors. Like general purpose instances, you can use compute
+optimized instances for workloads such as web, application, and gaming servers.
+====================================================================================
+Memory optimized instances are designed to deliver fast performance for workloads that
+process large datasets in memory. In computing, memory is a temporary storage area. It
+holds all the data and instructions that a central processing unit (CPU) needs to be able to
+complete actions. Before a computer program or application is able to run, it is loaded from
+storage into memory. This preloading process gives the CPU direct access to the computer
+program.
+==========================================================================
+Accelerated computing instances use hardware accelerators, or coprocessors, to perform
+some functions more efficiently than is possible in software running on CPUs. Examples of
+these functions include floating-point number calculations, graphics processing, and data
+pattern matching.
+======================================================================================
+Storage optimized instances are designed for workloads that require high, sequential read
+and write access to large datasets on local storage. Examples of workloads suitable for
+storage optimized instances include distributed file systems, data warehousing
+applications, and high-frequency online transaction processing (OLTP) systems.
+===============================================================================
+On-Demand Instances are ideal for short-term, irregular workloads that cannot be
+interrupted. No upfront costs or minimum contracts apply. The instances run continuously
+until you stop them, and you pay for only the compute time you use.
+===============================================================================
+reserved Instances are a billing discount applied to the use of On-Demand Instances in
+your account, and these are suited for steady-state workloads or ones with predictable
+usage. You can purchase Standard Reserved and Convertible Reserved Instances for a 1-year
+or 3-year term, and Scheduled Reserved Instances for a 1-year term. You realize greater cost
+savings with the 3-year option.
+==================================================================================
+spot Instances are ideal for workloads with flexible start and end times, or that can
+withstand interruptions. They allow you to request spare Amazon EC2 computing capacity
+for up to 90% off of the On-Demand price. The catch here is that AWS can reclaim the
+instance at any time they need it, giving you a two-minute warning to finish up work and
+save state. You can always resume later if needed. So when choosing Spot Instances, make
+sure your workloads can tolerate being interrupted. A good example of those are batch
+workloads.
+===========================================================================
+Dedicated Hosts are physical servers with Amazon EC2 instance capacity that is fully
+dedicated to your use. These are usually for meeting certain compliance requirements and
+nobody else will share tenancy of that host.
+
+
+Amazon EC2 Auto Scaling enables you to automatically add or remove Amazon EC2 
+instances in response to changing application demand. By automatically scaling your 
+instances in and out as needed, you are able to maintain a greater sense of application 
+availability.
+Within Amazon EC2 Auto Scaling, you can use two approaches: dynamic scaling and 
+predictive scaling.
+ Dynamic scaling responds to changing demand.
+ Predictive scaling automatically schedules the right number of Amazon EC2 instances 
+based on predicted demand.
+
+Elastic Load Balancing
+Elastic Load Balancing (ELB) is the AWS service that automatically distributes incoming 
+application traffic across multiple resources, such as Amazon EC2 instances.
+A load balancer acts as a single point of contact for all incoming web traffic to your Auto 
+Scaling group. This means that as you add or remove Amazon EC2 instances in response to 
+the amount of incoming traffic, these requests route to the load balancer first. Then, the 
+requests spread across multiple resources that will handle them. For example, if you have 
+multiple Amazon EC2 instances, Elastic Load Balancing distributes the workload across the 
+multiple instances so that no single instance has to carry the bulk of it
+
+
+VPC
+A networking service that you can use to establish boundaries around your AWS resources
+is Amazon Virtual Private Cloud (Amazon VPC).
+A VPC, or Virtual Private Cloud, is essentially your own private network in AWS. A VPC
+allows you to define your private IP range for your AWS resources, and you place things like
+EC2 instances and ELBs inside of your VPC. Amazon VPC enables you to provision an isolated
+section of the AWS Cloud. In this isolated section, you can launch resources in a virtual
+network that you define. These resources can be public facing so they have access to the
+internet, or private with no internet access, usually for backend services like databases or
+application servers.
+Within a virtual private cloud (VPC), you can organize your resources into subnets.
+A subnet is a section of a VPC that can contain resources such as Amazon EC2 instances.
+Subnets are chunks of IP addresses in your VPC that allow you to group resources together
+
+
+AWS Direct Connect is a service that enables you to establish a dedicated private 
+connection between your data centre and a VPC.
+
+
+
+Version control:
+-----------------------------------------------
+->Tracking And Managing changes of project
+->Types
+1.Git -> OpenSource
+	 ->
+Remote Repository ->
+Local Repository ->
+
+2.Git lab
+3.Bit bucket
+4.AWS code 
+
+
+------------------------------------------------------------------------------------------------
+24/02/2023                GIT
+
+
+                        Remote Repository
+                       ===================
+
+Generating SSH key and Connecting
+*********************************
+
+Profile -> Settings ->Access -> SSH & GPG -> Generate SSH Keys -> 5. Generating a new SSh key and adding it to the ssh-key -> => Copy $ ssh-keygen -t rsa -b 4096 -C "your_email@example.com" => Paste It in Git Bash(With your registed mail id) -> press enter until 
+
+The key's randomart image is:
++---[RSA 4096]----+
+|B=o.O*o          |
+|+=o=.* .         |
+|+EB.o = +        |
+|o+.+ = B .       |
+| .. B o S        |
+|   = o +         |
+|    + *          |
+|   . = o         |
+|    .            |
++----[SHA256]-----+
+
+=> Go the files where it Saved Shown by diplay Open(.pub or publisher file) in Notepad -> copy (Starts witn ssh- And ends with .com) -> Then Open SSH key in Git -> New SSH Key -> Give Authenticator Name What you want and Paste copied file from notepad in Password 
+
+
+
+
+
+Connecting to GitHUb Account via GitBash
+****************************************
+In GitBash
+
+1.Configure UserId 
+	Syntax : (git config --global user.name "UserName")
+		    git config --global user.name "BharathrajGP"
+	
+2.Configure UserEmail
+	Syntax : (git config --global user.email "My_Name@gmail.com")
+		    git config --global user.email "bharathraj.gp@gmail.com"
+
+
+
+
+
+
+					Local Repository
+			   	    ===================
+
+
+Creation Of Local Repository using SSH url
+*******************************************
+1.Create Remote Repository
+2.Under Code copy ssh url
+3.Open git bash in the folder where repository must be cloned 
+  use command
+git clone <ssh url>
+ eg : git clone  git@github.com:BharathrajGP/LocalRepo01.git
+
+--> git Clone:
+	This command is used to create local repository with the help of ssh url or http url
+
+
+
+Git pull 
+********
+	-> It is used to update any changes done in remote to local repository
+	-> IN remote repository -> add file -> Give file name ,Do changes -> commit changes =>
+	   go to local repository ->Git bash here -> type git pull => changes are updated in local repository	
+
+
+
+
+How to push code from local repository to Remote Repository
+***********************************************************
+
+command 1.--> 1.git add -A :
+             -> It select all files and push everything
+            2.git add * 
+
+            3.git add <filename>: ex : git add dev.txt
+ 
+command 2.--> git commit -m"message"
+command 3.-->git push
+==> git status -> It is used to check the file is added or not
+
+
+
+
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+27/02/2023
+
+
+							Storage
+							*******
+
+Root Storages
+==============
+1. Instance Storage
+	-> It is always a temporary storage
+	-> It is like program
+
+		An instance store provides temporary block-level storage for an Amazon EC2 instance. An instance store is disk storage that is physically attached to the host computer for an Ec2 instance, and therefore has the same lifespan as the instance. The catch here is that since this volume is attached to the underlying physical host,if you stop or terminate means that when the instance is terminated, you lose any data in the instance store.The reason for this,is that if you start your instance from a stop state,it's likely that EC2 instance will start up on another host. A host where that volume does not exist.Remember  EC2 instances are virtual machines, and therefore the underlying host can change between stopping and starting an instance.
+
+
+2. Amazon Elastic Block Store(EBS Storage)
+	-> It is always a permanent storage
+	-> Elastic Box Storage
+	->It is like Database
+	->It is always attached with EC2
+	->If file is deleted data is present instorage 
+		
+		
+		Amazon EBS is a service that provides block-level storage volumes that you can use with Amazon EC2 instances. If you stop or terminate an Amazon EC2 instance, all the data on the attached EBS volume remains available.
+With EBS,you can create virtual hard drives that we call EBS volumes that you can attach to your EC2 instances.These are separate drives from the local instance store volumes, and they aren't tied directly to the host that your EC2 instance is running on.This means that the
+data that you write to an EBS volume persists between stops and starts of an EC2 instance (i.e., beyond the lifecycle of an EC2 instance)
+
+
+3. Amazon Simple Storage Service (Amazon S3)
+		Amazon S3 is a service that provides object-level storage.
+		Amazon S3 store data as objects in buckets.
+		You can upload any type of file to Amazon S3, such as images, videos,text files, and so on.
+		For example, you might use Amazon S3 to store backup files, media files for a website, or archived documents. Amazon S3 offers unlimited storage space.The maximum size for an object in Amazon S3 is 5TB.
+
+	Creating S3 Bucket
+	==================
+		-->AWS Console -> S3-> Create Bucket ->(bucket name should be unique and small characters) uncheck the public access -> disable ACL's
+-->Open the bucket ->go to permissions -> edit bucket policy
+-->Search bucket policy in google Copy and paste ->Then upload files and folder of project( upload  like index.html visible directly)->properties->static website hosting
+
+
+
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+28/02/2022
+
+							Storage Classes
+							***************
+
+S3 Standard
+===========
+* Designed for frequently accessed data
+* Stores data in a minimum of three Availability Zone
+
+S3 Standard-Infrequent Access (S3 Standard-IA)
+==============================================
+* Ideal for infrequently accessed data
+* Similar to S3 Standard but has a lower storage price and Higher retrieval price
+
+S3 One Zone-Infrequent Access (S3 One Zone-IA)
+==============================================
+* Stores data in a single Availability Zone
+* Has a lower Storage price than S3 Standard-IA
+* Requires a small monthly monitoring and automation fee per object in the S3 intelligent-Tiering storage class,Amazon S3 monitors objects access patterns.If you haven't accessed an object for 30 consecutive days, Amazon S3 automatically moves it to the infrequent access tier,S3 Standard-IA.If you access an object in the infrequent access tier,Amazon S3 automatically moves it to the frequent access tier,S3 standard.
+
+S3 Glacier
+==========
+* Low cost storage designed for data archiving
+* Able to retrieve objects within a few minutes to hours
+Say, we need to retain data for several years for auditing purposes
+And we don't need it to be retrieved very rapidly.Well, then you can use Amazon S3 Glacier to achieve that data.		
+
+S3 Glacier Deep Achieve
+=======================
+* Lowest-cost object storage class ideal for archiving
+* Able to retrieve Objects within 12 hours.
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+01/03/2023 
+							
+							*********************
+
+web biased -> access through url
+S3 is web diased
+
+EFS
+===
+	In file storage, multiple client(such as users,applications ,servers and so on) can access data that is stored in shared file folders
+
+
+Amazon Relational Database Srevice
+==================================
+	Amazon Relational Database Srevice(Amazon RDS) is a service that enables you to run relational databases in the AWS cloud
+Amazon RDS Database engines
+Amazon RDS is available on sux database engines, which optimize for memory,performance, or input/output(I/O).Supported database engines include
+* Amazon Aurora
+* PostgreSQL
+* MySQL
+* MariaDB
+* Oracle Database
+* MS SQL Server
+
+
+
+Creation Of RDS Database
+===========================
+* WE can transfer S3 to RDS
+
+RDS -> Create database -> Standard create ->MySQL ->Templates -> Free tier ->Make Public-> Settings->Credential settings -> User name & Password -> **Instance configuration -> Standard classes (If Template != free tier this step is needed)** ->Connectivity -> Don't connect to EC2 -> Public access -> Create 
+
+
+ 
+Connecting RDS to Database
+==========================
+Connectivity & Security-> Copy Endpoint 
+Security -> Default security link ->Inbound rules ->Add rule ->3306->Source- Anywhere IPv4 -> Save rules
+	   -> Outbound rules -> Add rule->custom ->port range 3306 -> Anywhere ->Save rules
+=> In MySQL WorkBench -> New Connectivity ->Connection Name -> Host name - Paste Copied end point ->test
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+2/03/2023
+
+
+
+
+GIT pull & merge
+
+git branch<New branchname>--> used to create a branch 
+ex--> git branch dev1
+
+git branch --> list the branches in local repo
+
+git checkout branch name --> change the branch
+ex-->git checkout dev1
+
+
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+6/3/2023
+
+								Microsoft SQL Server
+								====================
+
+1.Amazon Aurora
+***************
+	Amazon Aurora is an enterprises-class relational database. It is compatible with MySQL and PostgreSQL relational databases. It is up to five times faster than standard MySQL databases and up to three times faster than standard PostgreSQL databases.
+
+Consider Amazon  Aurora if your workloads require high availability. It replicates six copies of your data across three availability zones and continuously backs up your data to Amazon S3
+
+
+2.Amazon DynamoDB
+*****************
+	Amazon DynamoDB is a key-value database service.It delivers single-digit millisecond performance at any scale. It is a non-relational,NoSQL database
+	
+
+3.AWS Database Migration Service(AWS DMS)
+*****************************************
+	It anables you to migrate relational databases,nonrelational databases, and other types of data stores.
+
+
+Amazon DocumentDB is a document database service that supports MongoDB workloads.(MongoDB is a document database program).This is great for content management,catalogs and user profiles
+
+
+
+Storages
+==========
+Instances
+EBS
+S3
+EFS
+
+Database
+=========
+RDS
+
+
+
+
+
+
+DynamoDB -> Create table-> 
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+9/03/2023
+
+							Creating alarm with cloud watch and SNS
+							***************************************
+	
+-> Create SNS topic (Please select standard)
+Apply Subscription
+	 Go for topic and select it..Create Subscription Cloudwatch
+	 Metrics --> All Metrics--> Search for cpu utilization
+	 -->Select EC2 -->Select respective instance--> go for graph metrics.Under action select alarm.
+Select threshold value.Next
+Select SNS topic..EC2 Action-->Select or leave-->Next give message --> Next
+Create alarm and wait with paitence.
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
